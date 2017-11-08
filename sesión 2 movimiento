@@ -1,0 +1,44 @@
+;; clase 2 movimiento
+
+to setup
+ca
+  crt 1
+  ask turtles [
+
+  set shape one-of shapes
+ set color random 140
+  set size 3]
+
+end
+
+
+
+to mover [angulo]
+ ask turtles [
+    set heading angulo
+    fd 5
+    actualizar-movimiento
+  ]
+end
+
+to mover-norte
+  mover 0
+end
+to mover-sur
+mover 180
+end
+
+to mover-este
+mover 270
+
+end
+
+to mover-oeste
+mover 90
+end
+
+to actualizar-movimiento
+  set-current-plot "movimiento" ; asigne a nuestro grafico actua
+  set-plot-pen-color color ; el color que tenga la tortuga
+  plotxy xcor ycor
+end
