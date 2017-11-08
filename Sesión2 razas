@@ -1,0 +1,24 @@
+breed [personas persona]
+breed [carros carro]
+breed [mariposas mariposa]
+
+to setup
+create-personas 2
+  ask personas [ set shape "person"
+    set color red
+    set size 3
+    setxy -2 -4
+    ]
+  create-mariposas 5
+ ask mariposas [ set shape "butterfly"
+    set color 123
+    set size 2
+   setxy random-xcor random-ycor
+
+    ]
+
+ask patches [ if pycor > 0 [set pcolor blue]]
+;ask patches [ if pxcor <= 0 [set pcolor black]]
+;ask patches [ if pycor <= 0 [set pcolor black]]
+ask patches [ if pycor <= 0 [set pcolor yellow]]
+end
