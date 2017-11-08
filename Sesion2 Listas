@@ -1,0 +1,38 @@
+globals [lista]
+
+to setup
+  ca
+  set lista [1 2 3 1 5]
+  let lista2 [8 7 6 5 4]
+ ; sumar lista lista2
+  let resultado (sumar lista lista2) ; para retornar valor de la suma, con report
+  show resultado
+end
+
+;to sumara [listax listay]
+
+ ; show word " lista1 listax ; show sólo recibe un parametro, por eso se usa word, que recibe 2 parametros
+ ;show word "lista1: " listay
+ ;show sum [ 2 4 3]
+ ; write
+ ; print
+;  let lista3 [0 0 0 0]
+
+ ; (foreach listax listay[
+  ;recibe un valor y con cada elemento de la lista elemento lista 1 a y lista 2 b
+  ;  [a b] -> (show b)
+  ;])
+;end
+
+
+to-report sumar [listax listay]
+
+  let lista3 [0 0 0 0 0]
+
+  (foreach listax listay[
+  ;recibe un valor y con cada elemento de la lista elemento lista 1 a y lista 2 b
+    [a b] -> ( set lista3 replace-item (position a listax) lista3 (a + b))
+  ])
+  ;; se retorna la lista 3
+  report lista3
+end
